@@ -7,7 +7,7 @@ using SQLite;
 
 namespace MauiAppMinhasCompras.Models
 {
-    class Produto
+    public class Produto
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
