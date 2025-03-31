@@ -17,6 +17,7 @@ public partial class NovoProduto : ContentPage
             Produto p = new Produto
             {
                 Descricao = txt_descricao.Text,
+                Categoria = txt_categoria.Text,
                 Quantidade = Convert.ToDouble(txt_quantidade.Text),
                 Preco = Convert.ToDouble(txt_preco.Text)
             };
@@ -24,6 +25,8 @@ public partial class NovoProduto : ContentPage
             await App.Db.Insert(p);
             
             await DisplayAlert("Sucesso!", "Registro Inserido", "Ok");
+
+            await Navigation.PopAsync();
         }
         catch(Exception ex)
         {

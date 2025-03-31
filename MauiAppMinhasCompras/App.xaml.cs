@@ -1,8 +1,9 @@
 ﻿namespace MauiAppMinhasCompras;
 using MauiAppMinhasCompras.Helpers;
 using SQLite;
+using System.Globalization;
 
-    public partial class App : Application
+public partial class App : Application
     {
     static SQLiteDatabaseHelper _db;
 
@@ -27,6 +28,7 @@ using SQLite;
         {
             InitializeComponent();
 
+        Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
             //MainPage = new AppShell();
             MainPage = new NavigationPage(new Views.ListaProduto());
         }
